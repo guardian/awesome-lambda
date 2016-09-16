@@ -6,7 +6,7 @@ A collection of Lambda related implementations, libraries, resources an useful s
 
 ## Tutorials
 
-* [scala-lambda](https://github.com/guardian/awesome-lambda/write-lambdas-in-scala.md) - Use Scala to write your lambda
+* [scala-lambda](https://github.com/guardian/awesome-lambda/blob/master/docs/write-lambdas-in-scala.md) - Use Scala to write your lambda
 
 ## Boilerplates
 
