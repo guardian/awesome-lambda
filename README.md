@@ -4,6 +4,10 @@ A collection of Lambda related implementations, libraries, resources an useful s
 
 ---
 
+## Tutorials
+
+* [scala-lambda](https://github.com/guardian/awesome-lambda/write-lambdas-in-scala.md) - Use Scala to write your lambda
+
 ## Boilerplates
 
 * [lambda-boilerplate](https://github.com/guardian/lambda-boilerplate) - Common boilerplate for node.js lambda deployable through RiffRaff
