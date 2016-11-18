@@ -12,9 +12,7 @@ You might want to consider using a lambda if:
 - You want to move your app from a poll logic to a push logic and have AWS handle it for you.
 - You want your app to do something on scheduled events.
 
-Check out more use cases [here](http://docs.aws.amazon.com/lambda/latest/dg/use-cases.html).
-
-Other goodies include:
+Check out more use cases [here](http://docs.aws.amazon.com/lambda/latest/dg/use-cases.html). Other goodies include:
 
 - You can test your lambda from the AWS web console by writing your test event and run it again the lambda.
 - Logs end up in Cloudwatch automatically.
@@ -27,7 +25,21 @@ Other goodies include:
 - Unpredictable spin up overhead when running software on the JVM (ScalaJS anyone?).
 - No control whatsoever on the hardware (obviously). You can find a list of physical limitations [here](http://docs.aws.amazon.com/lambda/latest/dg/limits.html).
 
-### Create a new Lambda
+### Writing a Lambda
+
+The only required step is to specify your request handler, which can be called however you want (the name can be set from the AWS web console). I like to keep the default name (`handleRequest`) and extend the [RequestHandler interface](https://github.com/aws/aws-lambda-java-libs/blob/master/aws-lambda-java-core/src/main/java/com/amazonaws/services/lambda/runtime/RequestHandler.java) so that it's obvious from the source code where the logic starts, e.g.
+
+```scala
+class Lambda extends RequestHandler[S3Event, Unit] {
+    override def handleRequest(event: S3Event, context: Context): Unit = {
+        // hic sunt leones 
+    }
+}
+```
+
+In this example I'm using as `S3Event` as event type (courtesy of the AWS SDK), but an event is really just a json blob you could handle yourself as a Java `Map[String, Object`] if you like. You're done! :) - however, if you want an even more verbose guide with pictures [here](https://aws.amazon.com/blogs/compute/writing-aws-lambda-functions-in-scala/)'s a good one.
+
+### Deploying a Lambda
 
 1. First you need to package up your project. One easy way to do it is with [sbt assembly](https://github.com/sbt/sbt-assembly).
 
