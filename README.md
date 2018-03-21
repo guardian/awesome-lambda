@@ -12,10 +12,10 @@ A collection of Lambda related implementations, libraries, resources an useful s
 
 * [lambda-boilerplate](https://github.com/guardian/lambda-boilerplate) - Common boilerplate for node.js lambda deployable through RiffRaff
 * [lambda-scala-boilerplate.g8](https://github.com/guardian/lambda-scala-boilerplate.g8) - A scala boilerplate, materialised as an sbt template. It provides the following:
- * deployable using riff-raff.yaml
- * provides the corresponding cloudformation template (yaml)
- * uses cloudformed environment variables to pass App, Stack and Stage
- * the cloudformation stack is deployed automatically via riff-raff
+    * deployable using riff-raff.yaml
+    * provides the corresponding cloudformation template (yaml)
+    * uses cloudformed environment variables to pass App, Stack and Stage
+    * the cloudformation stack is deployed automatically via riff-raff
 
 ## Event Sources
 
